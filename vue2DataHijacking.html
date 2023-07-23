@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据劫持</title>
+</head>
+
+<body>
+  <script>
+
+    let obj = {
+      name: 'walking',
+      age: 18,
+      car: {
+        color: 'red',
+      }
+    }
+
+    Object.defineProperty(obj, 'name', {
+      get() {
+        return name;
+      },
+      set(val) {
+        name = val;
+      }
+    })
+
+    // 如果对象里面没有这个属性，就会给你添加，
+    // 然后通过 get  和 set 方法进行监控
+    Object.defineProperty(obj, 'say', {
+      get() {
+        return 'abc';
+      },
+      set(val) {
+        name = val;
+      }
+    })
+
+    console.log(obj);
+
+  </script>
+</body>
+
+</html>
