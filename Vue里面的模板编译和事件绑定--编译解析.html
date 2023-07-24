@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue里面的模板编译和事件绑定--编译解析</title>
   <script src="./vue.js"></script>
 </head>
-
 <body>
 
   <div id="app">
     {{ str }}
-    <h1>{{str}}</h1>
+    <h3>{{str}}</h3><hr>
 
     {{name}}
+    <h3>{{name}}</h3>
 
     <button @click="cli">点击</button>
+
+    <input type="text" v-model="name">
 
   </div>
 
@@ -32,11 +33,11 @@
           console.log(this); // {cli: ƒ} 输出的却是 methods对象
           // 而我们真正要找的 this 应该是 这个Vue对象
           console.log(this.$data.str);  // hello,帅哥
+          console.log(this.str, this.name);  //hello,帅哥  walking!!
         }
       },
     })
   </script>
 
 </body>
-
 </html>
