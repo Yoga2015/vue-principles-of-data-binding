@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原型对象和对象的原型</title>
+</head>
+
+<body>
+  <!-- <script>
+
+    function Fn(name) {
+      this.name = name;
+      this.age = 18;
+      this.sex = '男';
+    }
+
+    let zs = new Fn('zhangsan');
+    let ls = new Fn('lisi');
+
+    console.log(zs);
+    console.log(ls);
+
+  </script> -->
+
+  <script>
+    Object.prototype = 'kk'
+
+    function Fn() {
+      this.name = name;
+    }
+
+    Fn.prototype.skill = 'sing';
+
+    let person = new Fn();
+
+    // person.skill = 'swim';
+
+    console.log(person.skill);
+
+
+  </script>
+
+</body>
+
+</html>

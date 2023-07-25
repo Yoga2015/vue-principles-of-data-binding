@@ -26,7 +26,7 @@ class Vue {
   // 观察者
   observe() {
     for (let key in this.$data) {
-      let value = this.$data[key];
+      let value = this.$data[key];    // this.$data[key]  得到的是 属性值
       let _this = this;
       Object.defineProperty(this.$data, key, {
         get() {
